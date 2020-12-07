@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+    <div class="top">
+        <div class="logo">
+            <h1>Auto-Auction</h1>
+        </div>
+        <div class="container">
+            <div class="navigationbar">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="login.html" id="login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search">
+                <input type = "text" class="searchbar" placeholder="Search for a car...">
+            </div>
+        
+            <div class="navigationbar">
+                <nav>
+                    <ul>
+                        <li><a href="cleancars.php">Clean Cars</a></li>
+                        <li><a href="salvagecars.php">Salvage Cars</a></li>
+                        <li><a href="auction.php">Auction</a></li>
+                        <li><a href="buycar.php">Buy a car</a></li>
+                        <li><a href="sellcar.php">Sell your car</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="containerL">
+        <form action="loginvalidator.php" method="POST">
+            E-mail: <input type="text" name="email" required><br><br>
+            Password: <input type="password" name="password" id = "password" required>
+            <i class="far fa-eye" id="togglePassword"></i>
+            <br><br><input type="submit">
+        </form>
+    </div>
+</body>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password')
+
+    togglePassword.addEventListener('click',function(e){
+        const type = password.getAttribute('type')==='password'?'text':'password';
+        password.setAttribute('type',type);
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+</html>
